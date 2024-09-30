@@ -18,4 +18,4 @@ The activities in the pipeline includes:
   *  leverages DocumentArray's match function and searches the k nearest neighbors for the query Document based on their embedding field 
   *  utilizes ranking to find the best match as final result
   
-![Post Retrieval](Workflow_Reranker_RAG.jpg)
+![Post Retrieval](Workflow-Reranker_RAG.jpg)

@@ -22,7 +22,10 @@ Ranking and Re-ranking:
   * ![Cross-Encoder](cross-encoder.jpg)
 * BERTScore 
   * computes similarity scores between reference and candidate sentences using contextual embeddings from a Language Model. It is calculated by summing cosine similarities of token-level embeddings extracted by a pre-trained BERT model, with token importance weighted accordingly
-  * x
+#Experiment
+* Language models utilized in extracting embeddings
+* The models are DistilBERT from the sentence-transformers library, "msmarco-distilbert-dot-v5," with 66M parameters creating a 768-dimensional vector, and GPT-2 large from the Transformers library with 774M parameters generating a 1280-dimensional vector. DistilBERT handles 512 tokens per sequence, while GPT-2 large can process 1024 tokens
+ # Tables
 * References 
   *  l 
   *  t

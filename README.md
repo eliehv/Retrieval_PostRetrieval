@@ -16,20 +16,21 @@ Ranking and Re-ranking:
   * scores sentence pairs by generating embeddings in a vector space
   * a language model independently processes each chunk (sentence)
   * embeddings can be compared using similarity measures
+    ![Bi_Encoder](Bi_Encoder.png)
 * Cross-Encoder
   * predicts textual similarity by inputting two sentences into a Transformer network, followed by a classifier to determine similarity probability.
   * Cross-Encoders significantly improve re-ranking accuracy by performing attention mechanisms across queries and documents, but are computationally intensive. Therefore, a combination of Bi-Encoder for initial retrieval and Cross-Encoder for re-ranking is effective, balancing speed and accuracy
   * ![Cross-Encoder](Cross_Encoder.png)
 * BERTScore 
   * computes similarity scores between reference and candidate sentences using contextual embeddings from a Language Model. It is calculated by summing cosine similarities of token-level embeddings extracted by a pre-trained BERT model, with token importance weighted accordingly
-    ![Cross-Encoder](BERTScore.png)
+    ![BERTScore](BERTScore.png)
 #Experiment
 * Language models utilized in extracting embeddings
 * The models are DistilBERT from the sentence-transformers library, "msmarco-distilbert-dot-v5," with 66M parameters creating a 768-dimensional vector, and GPT-2 large from the Transformers library with 774M parameters generating a 1280-dimensional vector. DistilBERT handles 512 tokens per sequence, while GPT-2 large can process 1024 tokens
  # Tables
  ## Mean Reciprocal Rank
  Mean Reciprocal Rank is an order-based metric which means returning the actual relevant results at rank 1 scores better than at rank k. Another attribute of the MMR is that it considers the number of queries in the calculation.
- $\MRR = \frac{\1}{Q}\sum_{q=1}^Q frac{\1}{rank_q}\$
+ $\MRR = \frac{1}{Q} sum_{q=1}^Q frac{1}{rank_q}\$
 Where Q is the number of queries, q is a specific query, and $\rank_q\$ is the rank (position) of the first actual relevant result for the query q (Briggs & Carnevali, n.d.).
 The main advantage of this metric is being order-based which is crucial for systems like question-answering but it just takes into account the first relevant item so, it is not suitable for use-cases that rather to return multiple options like recommendation systems or search engines (Briggs & Carnevali, n.d.).
 

@@ -67,6 +67,7 @@ The retrieval process consists of three steps:
 * References 
   *  Retrieve & Re-Rank—Sentence-Transformers documentation. (n.d.). Retrieved July 12, 2023, from https://www.sbert.net/examples/applications/retrieve_rerank/README.html
   *  Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., & Artzi, Y. (2020). BERTScore: Evaluating Text Generation with BERT (arXiv:1904.09675). arXiv. http://arxiv.org/abs/1904.09675
+  *  [link to the thesis](https://jyx.jyu.fi/bitstream/handle/123456789/92552/URN:NBN:fi:jyu-202401081055.pdf;jsessionid=967E037D363CBE8A82F9AC87EB8E8147?sequence=1)
 
   
 

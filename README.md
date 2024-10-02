@@ -1,4 +1,4 @@
-# Retrieval_PostRetrieval_GraphRAG
+# Retrieval_PostRetrieval
 The retrieval process consists of three steps: 
 * pre-retrieval
 * retrieval
@@ -20,9 +20,11 @@ Ranking and Re-ranking:
 * Cross-Encoder
   * predicts textual similarity by inputting two sentences into a Transformer network, followed by a classifier to determine similarity probability.
   * Cross-Encoders significantly improve re-ranking accuracy by performing attention mechanisms across queries and documents, but are computationally intensive. Therefore, a combination of Bi-Encoder for initial retrieval and Cross-Encoder for re-ranking is effective, balancing speed and accuracy
+    (mmarco-mMiniLMv2-L12-H384-v1)
   * ![Cross-Encoder](Cross_Encoder.png)
 * BERTScore 
   * computes similarity scores between reference and candidate sentences using contextual embeddings from a Language Model. It is calculated by summing cosine similarities of token-level embeddings extracted by a pre-trained BERT model, with token importance weighted accordingly
+    (microsoft/deberta-xlarge-mnli)
     ![BERTScore](BERTScore.png)
 #Experiment
 * Language models utilized in extracting embeddings
@@ -41,10 +43,11 @@ The main advantage of this metric is being order-based which is crucial for syst
 | msmacro-distillbert-dot-v5 | Cross-Encoder     |0.83       |
 |                            | BERTScore         |0.56       |
 
-* LM used in BERTscore and Cross-Encoder
-* chunking
+
+ parameters: context length
 * References 
-  *  l 
-  *  t
+  *  Retrieve & Re-Rank—Sentence-Transformers documentation. (n.d.). Retrieved July 12, 2023, from https://www.sbert.net/examples/applications/retrieve_rerank/README.html
+  *  Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., & Artzi, Y. (2020). BERTScore: Evaluating Text Generation with BERT (arXiv:1904.09675). arXiv. http://arxiv.org/abs/1904.09675
+
   
 
